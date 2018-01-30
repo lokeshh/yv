@@ -16,13 +16,13 @@ class App extends Component {
           <h1 className="App-title">Welcome to Yog Vasistha reader</h1>
         </header>
         <Container>
+          <br />
           <Row>
             <Col>
               <h3>योग वासिष्ठ​</h3>
             </Col>
           </Row>
 
-          <br />
           <br />
 
           <Row>
@@ -36,7 +36,7 @@ class App extends Component {
             </Col>
 
             <Col>
-              <select className="form-control custom-select">
+              <select className="form-control custom-select select-option">
                 <option selected>Select Chapter</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -45,7 +45,7 @@ class App extends Component {
             </Col>
 
             <Col>
-              <select className="form-control custom-select">
+              <select className="form-control custom-select select-option">
                 <option selected>Select Sholka</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -54,21 +54,24 @@ class App extends Component {
             </Col>
           </Row>
 
+          <hr />
 
-
-          <br />
-          <br />
-
-          <Card body>
-            <CardHeader><h4>मूल श्लोकः</h4></CardHeader>
-            <CardBody>
-              <h5><CardText>
-                सन्तोषः परमो लाभः सत्सङ्गः परमा गतिः।
-                <br />
-                विचारः परमं ज्ञानं शमो हि परमं सुखम्॥
-              </CardText></h5>
-            </CardBody>
-          </Card>
+          <Row>
+            <Col>
+              <Card>
+                <CardHeader><h4>मूल श्लोकः</h4></CardHeader>
+                <CardBody>
+                  <CardText>
+                    <h5>
+                      सन्तोषः परमो लाभः सत्सङ्गः परमा गतिः।
+                      <br />
+                      विचारः परमं ज्ञानं शमो हि परमं सुखम्॥
+                    </h5>
+                  </CardText>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
         </Container>
 
       </div>
