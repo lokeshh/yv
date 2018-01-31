@@ -5,7 +5,7 @@ import {
   Container, Row, Col, Form, Button, FormGroup, Label, Input, Card, CardTitle,
   CardText, CardHeader, CardBody
 } from 'reactstrap';
-import verseSelector from './verseSelector';
+import VerseSelector from './verseSelector';
 
 class App extends Component {
   render() {
@@ -25,34 +25,7 @@ class App extends Component {
 
           <br />
 
-          <Row>
-            <Col>
-              <select className="form-control custom-select select-option">
-                <option selected>Select Prakaran</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </Col>
-
-            <Col>
-              <select className="form-control custom-select select-option">
-                <option selected>Select Chapter</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </Col>
-
-            <Col>
-              <select className="form-control custom-select select-option">
-                <option selected>Select Sholka</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </Col>
-          </Row>
+          <VerseSelector />
 
           <hr />
 

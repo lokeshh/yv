@@ -30,12 +30,12 @@ class VerseSelector extends Component {
       <Row>
         <Col>
           <select
-            value="Select Book"
             className="form-control custom-select select-option"
             onChange={this.selectChapter}>
+            <option select value='0'>Select Book</option>
             {
               [1, 2, 3, 4].map(i => {
-                return <option value="1">One</option>
+                return <option value={i}>{i}</option>
               })
             }
           </select>
