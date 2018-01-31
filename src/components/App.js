@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import OmLogo from './OM.png';
 import {
   Container, Row, Col, Form, Button, FormGroup, Label, Input, Card, CardTitle,
   CardText, CardHeader, CardBody
 } from 'reactstrap';
+import verseSelector from './verseSelector';
 
 class App extends Component {
   render() {
