@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import OmLogo from './OM.png';
 import {
-  Container, Row, Col, Form, Button, FormGroup, Label, Input, Card, CardTitle,
-  CardText, CardHeader, CardBody
+  Container, Row, Col, Card, CardHeader, CardBody
 } from 'reactstrap';
 import VerseSelector from './verseSelector';
 
@@ -34,13 +33,11 @@ class App extends Component {
               <Card>
                 <CardHeader><h4>मूल श्लोकः</h4></CardHeader>
                 <CardBody>
-                  <CardText>
-                    <h5>
-                      सन्तोषः परमो लाभः सत्सङ्गः परमा गतिः।
-                      <br />
-                      विचारः परमं ज्ञानं शमो हि परमं सुखम्॥
-                    </h5>
-                  </CardText>
+                  <h5>
+                    सन्तोषः परमो लाभः सत्सङ्गः परमा गतिः।
+                    <br />
+                    विचारः परमं ज्ञानं शमो हि परमं सुखम्॥
+                  </h5>
                 </CardBody>
               </Card>
             </Col>

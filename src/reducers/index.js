@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import verseCountLoading from './count';
+import verseReducer from './verse_reducer';
 
 const rootReducer = combineReducers({
-  verseCountLoading: verseCountLoading
+  verseReducer: verseReducer,
 });
 
 export default rootReducer;
