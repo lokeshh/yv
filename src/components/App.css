@@ -30,3 +30,7 @@
 .select-option {
   min-width: 200px;
 }
+
+.display-linebreak {
+  white-space: pre-line;
+}

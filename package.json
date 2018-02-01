@@ -12,7 +12,8 @@
     "reactstrap": "^5.0.0-alpha.4",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "sanscript": "0.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

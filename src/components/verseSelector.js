@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
-import { changeChapter, changeBook } from '../actions/verseSelectorActions';
+import { changeChapter, changeBook, changeVerse } from '../actions/verseSelectorActions';
 
 class VerseSelector extends Component {
   selectBook(e) {
@@ -13,6 +13,13 @@ class VerseSelector extends Component {
     const chapter = e.target.value
     const book = this.props.verseReducer.currentBook
     this.props.changeChapter(book, chapter)
+  }
+
+  selectVerse(e) {
+    const book = this.props.verseReducer.currentBook;
+    const chapter = this.props.verseReducer.currentChapter;
+    const verse = e.target.value
+    this.props.changeVerse(book, chapter, verse)
   }
 
   render() {
@@ -53,6 +60,7 @@ class VerseSelector extends Component {
           {
             !this.props.verseReducer.loadingVerseCount &&
               <select
+                onChange={this.selectVerse.bind(this)}
                 defaultValue='0'
                 className="form-control custom-select select-option">
                 <option value='0'>Select Verse</option>
@@ -77,5 +85,6 @@ function mapStateToProps({ verseReducer }) {
 
 export default connect(mapStateToProps, {
   changeChapter,
-  changeBook
+  changeBook,
+  changeVerse
 })(VerseSelector);

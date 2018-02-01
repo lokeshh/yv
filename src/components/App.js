@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 import OmLogo from './OM.png';
 import {
   Container, Row, Col, Card, CardHeader, CardBody
 } from 'reactstrap';
 import VerseSelector from './verseSelector';
+import VerseDisplay from './verseDisplay';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="App">
@@ -28,25 +30,10 @@ class App extends Component {
 
           <hr />
 
-          <Row>
-            <Col>
-              <Card>
-                <CardHeader><h4>मूल श्लोकः</h4></CardHeader>
-                <CardBody>
-                  <h5>
-                    सन्तोषः परमो लाभः सत्सङ्गः परमा गतिः।
-                    <br />
-                    विचारः परमं ज्ञानं शमो हि परमं सुखम्॥
-                  </h5>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
+          <VerseDisplay />
         </Container>
 
       </div>
     );
   }
 }
-
-export default App;
