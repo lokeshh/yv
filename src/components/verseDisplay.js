@@ -2,8 +2,22 @@ import React, { Component } from 'react';
 import Sanscript from 'sanscript';
 import { connect } from 'react-redux';
 import { Row, Col, CardHeader, CardBody, Card } from 'reactstrap';
+import axios from 'axios';
+
+const ROOT_URL = 'https://yv-reader-api.herokuapp.com';
 
 class VerseDisplay extends Component {
+  componentDidMount() {
+    this.VerseDisplay();
+  }
+  
+  VerseDisplay() {
+    axios.get(`${ROOT_URL}/count/1/1`)
+    .then(response => {
+      console.log('here')
+    })
+  }  
+  
   render() {
     return (
       <Row>
