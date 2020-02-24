@@ -34,7 +34,7 @@ class VerseSelector extends Component {
             onChange={this.selectBook.bind(this)}>
             <option value='0'>Select Book</option>
             {
-              [1, 2, 3, 4].map(i => {
+              [1, 2, 3, 4, 5, 6, 7].map(i => {
                 return <option value={i} key={i}>{i}</option>
               })
             }

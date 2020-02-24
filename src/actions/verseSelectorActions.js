@@ -35,10 +35,13 @@ export function changeVerse(book, chapter, verse) {
 
 export function changeBook(book) {
   const mapping = {
-    1: 32,
+    1: 33,
     2: 20,
-    3: 16,
-    4: 33
+    3: 122,
+    4: 62,
+    5: 93,
+    6: 128,
+    7: 216
   }
 
   return dispatch => {
