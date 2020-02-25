@@ -3,10 +3,17 @@ import Sanscript from 'sanscript';
 import { connect } from 'react-redux';
 import { Row, Col, CardHeader, CardBody, Card } from 'reactstrap';
 import axios from 'axios';
+import { compose } from "redux";
+import { withRouter } from "react-router-dom";
+
+
 
 const ROOT_URL = 'https://yv-reader-api.herokuapp.com';
 
+
 class VerseDisplay extends Component {
+
+
   componentDidMount() {
     this.VerseDisplay();
   }
@@ -15,7 +22,9 @@ class VerseDisplay extends Component {
     axios.get(`${ROOT_URL}/count/1/1`)
     .then(response => {
       console.log('here')
+      this.props.history.push("/home");
     })
+
   }  
   
   render() {
@@ -45,4 +54,7 @@ function mapStateToProps({ verseReducer: { displayVerse } }) {
   return { displayVerse };
 }
 
-export default connect(mapStateToProps)(VerseDisplay);
+export default compose(
+  withRouter,
+  connect(mapStateToProps)
+)(VerseDisplay);
