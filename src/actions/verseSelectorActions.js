@@ -7,6 +7,7 @@ export const CHANGE_BOOK = 'CHANGE_BOOK';
 export const CHANGE_CHAPTER = 'CHANGE_CHAPTER';
 export const CHANGE_VERSE = 'CHANGE_VERSE';
 export const VERSE_TEXT_SUCCESS = 'VERSE_TEXT_SUCCESS';
+export const RESET_TEXT = 'RESET_TEXT';
 
 const ROOT_URL = 'https://yv-reader-api.herokuapp.com';
 
@@ -14,6 +15,8 @@ export function changeChapter(book, chapter) {
   return dispatch => {
     dispatch({ type: FETCH_VERSE_COUNT });
     dispatch({ type: CHANGE_CHAPTER, payload: chapter })
+    dispatch({ type: CHANGE_VERSE, payload: 0 })
+    dispatch({ type: RESET_TEXT })
 
     axios.get(`${ROOT_URL}/count/${book}/${chapter}`)
       .then(response => {
@@ -46,6 +49,9 @@ export function changeBook(book) {
 
   return dispatch => {
     dispatch({ type: CHANGE_BOOK, payload: book })
+    dispatch({ type: CHANGE_CHAPTER, payload: 0 })
+    dispatch({ type: CHANGE_VERSE, payload: 0 })
+    dispatch({ type: RESET_TEXT })
     dispatch({
       type: CHAPTER_COUNT_SUCCESS,
       payload: mapping[book]

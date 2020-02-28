@@ -20,12 +20,10 @@ class VerseDisplay extends Component {
   
   VerseDisplay() {
     axios.get(`${ROOT_URL}/count/1/1`)
-    .then(response => {
-      console.log('here')
-      this.props.history.push("/home");
+    .then(response => {     
+      console.log('API working') 
     })
-
-  }  
+  }
   
   render() {
     return (

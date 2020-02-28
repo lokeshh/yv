@@ -9,6 +9,9 @@ import VerseSelector from './verseSelector';
 import VerseDisplay from './verseDisplay';
 
 export default class App extends Component {
+
+  
+
   render() {
     return (
       <div className="App">
