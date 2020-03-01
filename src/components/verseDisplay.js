@@ -5,6 +5,7 @@ import { Row, Col, CardHeader, CardBody, Card } from 'reactstrap';
 import axios from 'axios';
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
+import { changeVerse } from "../actions/verseSelectorActions";
 
 
 
@@ -24,13 +25,29 @@ class VerseDisplay extends Component {
       console.log('API working') 
     })
   }
+
+  prevVerse() {
+    if (this.props.currentVerse != 1) {
+      this.props.changeVerse(this.props.currentBook, this.props.currentChapter, parseInt(this.props.currentVerse) - 1);
+    }
+  }
+
+  nextVerse() {
+    if (this.props.currentVerse != this.props.maxVerses) {
+      this.props.changeVerse(this.props.currentBook, this.props.currentChapter, parseInt(this.props.currentVerse) + 1);
+    }
+  }
   
   render() {
     return (
       <Row>
         <Col>
           <Card>
-            <CardHeader><h4>मूल श्लोकः</h4></CardHeader>
+            <CardHeader>
+              <button type="button" className="btn btn-secondary float-left btn-sm" onClick={() => this.prevVerse()}>Previous</button>
+              <button type="button" className="btn btn-secondary float-right btn-sm" onClick={() => this.nextVerse()}>Next</button>
+              <h4>मूल श्लोकः</h4>
+            </CardHeader>
             <CardBody>
               <h5 className="display-linebreak">
                 {/* {Sanscript.t(this.props.displayVerse.replace(/&nbsp;/g, ' '), 'iast', 'devanagari')} */}
@@ -48,11 +65,13 @@ class VerseDisplay extends Component {
   }
 }
 
-function mapStateToProps({ verseReducer: { displayVerse } }) {
-  return { displayVerse };
+function mapStateToProps({ verseReducer: { displayVerse, currentBook, currentChapter, currentVerse, maxVerses } }) {
+  return { displayVerse, currentBook, currentChapter, currentVerse, maxVerses };
 }
 
 export default compose(
   withRouter,
-  connect(mapStateToProps)
+  connect(mapStateToProps, {
+    changeVerse
+  })
 )(VerseDisplay);
