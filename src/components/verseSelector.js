@@ -4,6 +4,10 @@ import { Row, Col } from 'reactstrap';
 import { compose } from "redux";
 import { changeChapter, changeBook, changeVerse } from '../actions/verseSelectorActions';
 import { withRouter } from "react-router-dom";
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
 
 class VerseSelector extends Component {
   componentDidMount() {
@@ -39,54 +43,53 @@ class VerseSelector extends Component {
     return (
       <Row>
         <Col>
-          <select
-            defaultValue={this.props.verseReducer.currentBook}
+          <InputLabel id="demo-simple-select-label">Prakaran</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
             value={this.props.verseReducer.currentBook}
-            className="form-control custom-select select-option"
-            onChange={this.selectBook.bind(this)}>
-            <option value='0'>Select Book</option>
+            onChange={this.selectBook.bind(this)}
+          >
             {
-              [1, 2, 3, 4, 5, 6, 7].map(i => {
-                return <option value={i} key={i}>{i}</option>
-              })
+                [1, 2, 3, 4, 5, 6, 7].map(i => {
+                  return <MenuItem value={i}>{i}</MenuItem>
+                })
             }
-          </select>
+          </Select>
         </Col>
 
         <Col>
-          <select
-            onChange={this.selectChapter.bind(this)}
-            defaultValue={this.props.verseReducer.currentChapter}
+          <InputLabel id="demo-simple-select-label">Sarga</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
             value={this.props.verseReducer.currentChapter}
-            className="form-control custom-select select-option">
-            <option value='0'>Select Chapter</option>
+            onChange={this.selectChapter.bind(this)}
+          >
             {
               maxChapters > 0 && [...Array(maxChapters).keys()].map(i => {
                 i += 1;
-                return <option value={i} key={i}>{i}</option>
+                return <MenuItem value={i}>{i}</MenuItem>
               })
             }
-          </select>
+          </Select>          
         </Col>
 
         <Col>
-          {
-            !this.props.verseReducer.loadingVerseCount &&
-              <select
-                onChange={this.selectVerse.bind(this)}
-                defaultValue={this.props.verseReducer.currentVerse}
-                value={this.props.verseReducer.currentVerse}
-                className="form-control custom-select select-option">
-                <option value='0'>Select Verse</option>
-                {
-                  maxVerses > 0 && [...Array(maxVerses).keys()].map(i => {
-                    i += 1;
-                    return <option value={i} key={i}>{i}</option>
-                  })
-                }
-              </select>
-          }
-
+          <InputLabel id="demo-simple-select-label">Shloka</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={this.props.verseReducer.currentVerse}
+            onChange={this.selectVerse.bind(this)}
+          >
+            {
+              maxChapters > 0 && [...Array(maxVerses).keys()].map(i => {
+                i += 1;
+                return <MenuItem value={i}>{i}</MenuItem>
+              })
+            }
+          </Select>   
         </Col>
       </Row>
     )
