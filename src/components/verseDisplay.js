@@ -27,14 +27,18 @@ class VerseDisplay extends Component {
   }
 
   prevVerse() {
-    if (this.props.currentVerse != 1) {
-      this.props.changeVerse(this.props.currentBook, this.props.currentChapter, parseInt(this.props.currentVerse) - 1);
+    if (this.props.currentVerse !== 1) {
+      const currentVerse = parseInt(this.props.currentVerse) - 1
+      this.props.history.push(`/${this.props.currentBook}/${this.props.currentChapter}/${currentVerse}`)
+      this.props.changeVerse(this.props.currentBook, this.props.currentChapter, currentVerse);
     }
   }
 
   nextVerse() {
-    if (this.props.currentVerse != this.props.maxVerses) {
-      this.props.changeVerse(this.props.currentBook, this.props.currentChapter, parseInt(this.props.currentVerse) + 1);
+    if (this.props.currentVerse !== this.props.maxVerses) {
+      const currentVerse = parseInt(this.props.currentVerse) + 1
+      this.props.history.push(`/${this.props.currentBook}/${this.props.currentChapter}/${currentVerse}`)
+      this.props.changeVerse(this.props.currentBook, this.props.currentChapter, currentVerse);
     }
   }
   
