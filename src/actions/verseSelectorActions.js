@@ -9,7 +9,8 @@ export const CHANGE_VERSE = 'CHANGE_VERSE';
 export const VERSE_TEXT_SUCCESS = 'VERSE_TEXT_SUCCESS';
 export const RESET_TEXT = 'RESET_TEXT';
 
-const ROOT_URL = 'https://yv-reader-api.herokuapp.com';
+// const ROOT_URL = 'https://yv-reader-api.herokuapp.com';
+const ROOT_URL = 'https://o6el0hi09a.execute-api.us-east-1.amazonaws.com/dev'
 
 export function changeChapter(book, chapter) {
   return dispatch => {
