@@ -1,5 +1,6 @@
 import { FETCH_VERSE_COUNT, VERSE_COUNT_SUCCESS, CHAPTER_COUNT_SUCCESS,
-  CHANGE_BOOK, CHANGE_CHAPTER, CHANGE_VERSE, VERSE_TEXT_SUCCESS, RESET_TEXT
+  CHANGE_BOOK, CHANGE_CHAPTER, CHANGE_VERSE, VERSE_TEXT_SUCCESS, RESET_TEXT,
+  COMM_TEXT_SUCCESS
 } from '../actions/verseSelectorActions'
 
 const DEFAULT_VERSE = [
@@ -14,7 +15,8 @@ const INITIAL_STATE = {
   currentChapter: 0,
   currentVerse: 0,
   loadingVerseCount: false,
-  displayVerse: DEFAULT_VERSE
+  displayVerse: DEFAULT_VERSE,
+  displayComm: 'OM'
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -33,6 +35,8 @@ export default function(state = INITIAL_STATE, action) {
       return {...state, currentVerse: action.payload}
     case VERSE_TEXT_SUCCESS:
       return {...state, displayVerse: action.payload.data}
+    case COMM_TEXT_SUCCESS:
+      return {...state, displayComm: action.payload.data}
     case RESET_TEXT:
       return {...state, displayVerse: DEFAULT_VERSE}
     default:

@@ -7,6 +7,7 @@ import {
 } from 'reactstrap';
 import VerseSelector from './verseSelector';
 import VerseDisplay from './verseDisplay';
+import CommDisplay from './commDisplay';
 
 export default class App extends Component {
 
@@ -34,6 +35,10 @@ export default class App extends Component {
           <hr />
 
           <VerseDisplay />
+
+          <br />
+
+          <CommDisplay />
         </Container>
 
       </div>

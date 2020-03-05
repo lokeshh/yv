@@ -7,6 +7,7 @@ export const CHANGE_BOOK = 'CHANGE_BOOK';
 export const CHANGE_CHAPTER = 'CHANGE_CHAPTER';
 export const CHANGE_VERSE = 'CHANGE_VERSE';
 export const VERSE_TEXT_SUCCESS = 'VERSE_TEXT_SUCCESS';
+export const COMM_TEXT_SUCCESS = 'COMM_TEXT_SUCCESS';
 export const RESET_TEXT = 'RESET_TEXT';
 
 // const ROOT_URL = 'https://yv-reader-api.herokuapp.com';
@@ -33,8 +34,15 @@ export function changeVerse(book, chapter, verse) {
     axios.get(`${ROOT_URL}/verse/${book}/${chapter}/${verse}`)
       .then(response => {
         dispatch({ type: VERSE_TEXT_SUCCESS, payload: response })
-      })
-    }
+      }
+    )
+
+    axios.get(`${ROOT_URL}/commentary/${book}/${chapter}/${verse}`)
+      .then(response => {
+        dispatch({ type: COMM_TEXT_SUCCESS, payload: response })
+      }
+    )
+  }
 }
 
 export function changeBook(book) {
