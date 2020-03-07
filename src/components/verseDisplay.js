@@ -46,7 +46,7 @@ class VerseDisplay extends Component {
     return (
       <Row>
         <Col>
-          <Card>
+          <Card className="card bg-light mb-3">
             <CardHeader>
               <button type="button" className="btn btn-secondary float-left btn-sm" onClick={() => this.prevVerse()}>Previous</button>
               <button type="button" className="btn btn-secondary float-right btn-sm" onClick={() => this.nextVerse()}>Next</button>

@@ -34,14 +34,17 @@ class CommDisplay extends Component {
 
     render() {
         return (
-            <Card className={classes.root}>
+            <Card className={classes.root} style={{backgroundColor: '#ffc10733'}}>
             <CardContent>
-              <Typography className={classes.title} color="textSecondary" gutterBottom>
+              <Typography className={classes.title} color="textPrimary" gutterBottom>
               {this.props.displayComm}
               </Typography>
               <Typography variant="h5" component="h2">
               </Typography>
             </CardContent>
+            <CardActions>
+              <Typography varient="h6" color="textSecondary">-Vihari Lala Mitra</Typography>
+            </CardActions>
 
           </Card>
       
