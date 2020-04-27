@@ -8,6 +8,7 @@ import {
 import VerseSelector from './verseSelector';
 import VerseDisplay from './verseDisplay';
 import CommDisplay from './commDisplay';
+import CommAbsDisplay from './commAbsDisplay';
 
 export default class App extends Component {
 
@@ -35,6 +36,10 @@ export default class App extends Component {
           <hr />
 
           <VerseDisplay />
+
+          <br />
+
+          <CommAbsDisplay />
 
           <br />
 
