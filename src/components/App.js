@@ -19,7 +19,6 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={OmLogo} height='50px' width='50px'/>
-          <h1 className="App-title">Welcome to Yog Vasistha reader</h1>
         </header>
         <Container>
           <br />
