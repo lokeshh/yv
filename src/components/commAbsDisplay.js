@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
@@ -27,7 +24,6 @@ const classes = makeStyles({
       marginBottom: 12,
     },
   });
-  const bull = <span className={classes.bullet}>•</span>;
 
 
 class CommAbsDisplay extends Component {
@@ -37,7 +33,11 @@ class CommAbsDisplay extends Component {
             <Card className={classes.root} style={{backgroundColor: '#ffc10733'}}>
             <CardContent>
               <Typography className={classes.title} color="textPrimary" gutterBottom>
-              {this.props.displayCommAbs}
+              {
+                this.props.displayCommAbs.map(i => {
+                  return <div>{ i }<br /></div>
+                })
+              }
               </Typography>
               <Typography variant="h5" component="h2">
               </Typography>

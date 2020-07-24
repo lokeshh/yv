@@ -17,7 +17,7 @@ const INITIAL_STATE = {
   loadingVerseCount: false,
   displayVerse: DEFAULT_VERSE,
   displayComm: 'ॐ',
-  displayCommAbs: 'ॐ'
+  displayCommAbs: ['ॐ']
 }
 
 export default function(state = INITIAL_STATE, action) {

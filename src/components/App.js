@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import './App.css';
 import OmLogo from './OM.png';
 import {
-  Container, Row, Col, Card, CardHeader, CardBody
+  Container, Row, Col
 } from 'reactstrap';
 import VerseSelector from './verseSelector';
 import VerseDisplay from './verseDisplay';
@@ -18,7 +17,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={OmLogo} height='50px' width='50px'/>
+          <img src={OmLogo} height='50px' width='50px' alt='OM'/>
         </header>
         <Container>
           <br />

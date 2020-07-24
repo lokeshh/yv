@@ -6,7 +6,6 @@ import { changeChapter, changeBook, changeVerse } from '../actions/verseSelector
 import { withRouter } from "react-router-dom";
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 
 class VerseSelector extends Component {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Sanscript from 'sanscript';
 import { connect } from 'react-redux';
 import { Row, Col, CardHeader, CardBody, Card } from 'reactstrap';
 import axios from 'axios';
@@ -54,10 +53,9 @@ class VerseDisplay extends Component {
             </CardHeader>
             <CardBody>
               <h5 className="display-linebreak">
-                {/* {Sanscript.t(this.props.displayVerse.replace(/&nbsp;/g, ' '), 'iast', 'devanagari')} */}
                 {
                   this.props.displayVerse.map(i => {
-                    return <div>{Sanscript.t(i, 'iast', 'devanagari')}<br /></div>
+                    return <div>{ i }<br /></div>
                   })
                 }
               </h5>
