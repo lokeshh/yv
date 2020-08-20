@@ -5,7 +5,6 @@ import { compose } from "redux";
 import { changeChapter, changeBook, changeVerse } from '../actions/verseSelectorActions';
 import { withRouter } from "react-router-dom";
 import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
 
 class VerseSelector extends Component {
@@ -42,8 +41,9 @@ class VerseSelector extends Component {
     return (
       <Row>
         <Col>
-          <InputLabel id="demo-simple-select-label">Prakaran</InputLabel>
+          <InputLabel id="demo-simple-select-label">प्रकरणम्</InputLabel>
           <Select
+            native
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={this.props.verseReducer.currentBook}
@@ -51,15 +51,16 @@ class VerseSelector extends Component {
           >
             {
                 [1, 2, 3, 4, 5, 6, 7].map(i => {
-                  return <MenuItem value={i}>{i}</MenuItem>
+                  return <option value={i}>{i}</option>
                 })
             }
           </Select>
         </Col>
 
         <Col>
-          <InputLabel id="demo-simple-select-label">Sarga</InputLabel>
+          <InputLabel id="demo-simple-select-label">सर्गः</InputLabel>
           <Select
+            native
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={this.props.verseReducer.currentChapter}
@@ -68,15 +69,16 @@ class VerseSelector extends Component {
             {
               maxChapters > 0 && [...Array(maxChapters).keys()].map(i => {
                 i += 1;
-                return <MenuItem value={i}>{i}</MenuItem>
+                return <option value={i}>{i}</option>
               })
             }
           </Select>          
         </Col>
 
         <Col>
-          <InputLabel id="demo-simple-select-label">Shloka</InputLabel>
+          <InputLabel id="demo-simple-select-label">श्लोकः</InputLabel>
           <Select
+            native
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={this.props.verseReducer.currentVerse}
@@ -85,7 +87,7 @@ class VerseSelector extends Component {
             {
               maxChapters > 0 && [...Array(maxVerses).keys()].map(i => {
                 i += 1;
-                return <MenuItem value={i}>{i}</MenuItem>
+                return <option value={i}>{i}</option>
               })
             }
           </Select>   
