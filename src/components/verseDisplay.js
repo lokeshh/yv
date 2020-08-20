@@ -7,23 +7,7 @@ import { withRouter } from "react-router-dom";
 import { changeVerse } from "../actions/verseSelectorActions";
 
 
-
-const ROOT_URL = 'https://yv-reader-api.herokuapp.com';
-
-
 class VerseDisplay extends Component {
-
-
-  componentDidMount() {
-    this.VerseDisplay();
-  }
-  
-  VerseDisplay() {
-    axios.get(`${ROOT_URL}/count/1/1`)
-    .then(response => {     
-      console.log('API working') 
-    })
-  }
 
   prevVerse() {
     if (this.props.currentVerse !== 1) {

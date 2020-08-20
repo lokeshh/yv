@@ -35,11 +35,17 @@ export default function(state = INITIAL_STATE, action) {
     case CHANGE_VERSE:
       return {...state, currentVerse: action.payload}
     case VERSE_TEXT_SUCCESS:
-      return {...state, displayVerse: action.payload.data}
+      if (action.payload.val() != null) {
+        return {...state, displayVerse: action.payload.val()}
+      }
     case COMM_TEXT_SUCCESS:
-      return {...state, displayComm: action.payload.data}
+      if (action.payload.val() != null) {
+        return {...state, displayComm: action.payload.val()}
+      }
     case COMM_ABS_TEXT_SUCCESS:
-      return {...state, displayCommAbs: action.payload.data}
+      if (action.payload.val() != null) {
+        return {...state, displayCommAbs: action.payload.val()}
+      }
     case RESET_TEXT:
       return {...state, displayVerse: DEFAULT_VERSE}
     default:
