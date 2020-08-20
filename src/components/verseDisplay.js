@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col, CardHeader, CardBody, Card } from 'reactstrap';
-import axios from 'axios';
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
 import { changeVerse } from "../actions/verseSelectorActions";

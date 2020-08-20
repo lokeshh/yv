@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as firebase from "firebase/app";
 import 'firebase/database';
 
@@ -13,8 +12,6 @@ export const COMM_TEXT_SUCCESS = 'COMM_TEXT_SUCCESS';
 export const COMM_ABS_TEXT_SUCCESS = 'COMM_ABS_TEXT_SUCCESS';
 export const RESET_TEXT = 'RESET_TEXT';
 
-
-const ROOT_URL = 'https://o6el0hi09a.execute-api.us-east-1.amazonaws.com/dev'
 
 var firebaseConfig = {
   apiKey: "AIzaSyA82zcPEsxhD4dAnJ6c_QotN8n7hqrPsEw",
@@ -36,11 +33,14 @@ export function changeChapter(book, chapter) {
     dispatch({ type: CHANGE_VERSE, payload: 0 })
     dispatch({ type: RESET_TEXT })
 
-    axios.get(`${ROOT_URL}/count/${book}/${chapter}`)
+    const location = `${book}/${chapter}`
+    var yv_core_ref = firebase.database().ref(`yv/count/${location}`)
+    yv_core_ref.once('value')
       .then(response => {
         dispatch({ type: VERSE_COUNT_SUCCESS, payload: response })
-      })
-    }
+      }
+    )
+  }
 }
 
 export function changeVerse(book, chapter, verse) {
@@ -63,8 +63,8 @@ export function changeVerse(book, chapter, verse) {
       }
     )
 
-    var vlm_ref = firebase.database().ref(`yv/abs/${location}`)
-    vlm_ref.once('value')
+    var abs_ref = firebase.database().ref(`yv/abs/${location}`)
+    abs_ref.once('value')
       .then(response => {
         dispatch({ type: COMM_ABS_TEXT_SUCCESS, payload: response })
       }
