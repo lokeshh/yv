@@ -1,5 +1,6 @@
 import * as firebase from "firebase/app";
 import 'firebase/database';
+import 'firebase/analytics';
 
 export const FETCH_VERSE_COUNT = 'FETCH_VERSE_COUNT';
 export const VERSE_COUNT_SUCCESS = 'VERSE_COUNT_SUCCESS';
@@ -25,6 +26,8 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig)
+firebase.analytics()
+firebase.analytics().logEvent('session active')
 
 export function changeChapter(book, chapter) {
   return dispatch => {

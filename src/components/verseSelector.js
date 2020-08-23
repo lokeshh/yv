@@ -51,7 +51,7 @@ class VerseSelector extends Component {
           >
             {
                 [1, 2, 3, 4, 5, 6, 7].map(i => {
-                  return <option value={i}>{i}</option>
+                  return <option value={i} key={i}>{i}</option>
                 })
             }
           </Select>
@@ -69,7 +69,7 @@ class VerseSelector extends Component {
             {
               maxChapters > 0 && [...Array(maxChapters).keys()].map(i => {
                 i += 1;
-                return <option value={i}>{i}</option>
+                return <option value={i} key={i}>{i}</option>
               })
             }
           </Select>          
@@ -87,7 +87,7 @@ class VerseSelector extends Component {
             {
               maxChapters > 0 && [...Array(maxVerses).keys()].map(i => {
                 i += 1;
-                return <option value={i}>{i}</option>
+                return <option value={i} key={i}>{i}</option>
               })
             }
           </Select>   

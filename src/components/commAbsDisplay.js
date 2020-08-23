@@ -32,10 +32,10 @@ class CommAbsDisplay extends Component {
         return (
             <Card className={classes.root} style={{backgroundColor: '#ffc10733'}}>
             <CardContent>
-              <Typography className={classes.title} color="textPrimary" gutterBottom>
+              <Typography className={classes.title} component={'div'} color="textPrimary" gutterBottom>
               {
-                this.props.displayCommAbs.map(i => {
-                  return <div>{ i }<br /></div>
+                this.props.displayCommAbs.map((line, index) => {
+                  return <div key={index}>{ line }<br /></div>
                 })
               }
               </Typography>

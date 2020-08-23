@@ -37,8 +37,8 @@ class VerseDisplay extends Component {
             <CardBody>
               <h5 className="display-linebreak">
                 {
-                  this.props.displayVerse.map(i => {
-                    return <div>{ i }<br /></div>
+                  this.props.displayVerse.map((line, index) => {
+                    return <div key={index}>{ line }<br /></div>
                   })
                 }
               </h5>
