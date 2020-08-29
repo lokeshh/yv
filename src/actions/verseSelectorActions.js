@@ -33,7 +33,7 @@ export function changeChapter(book, chapter) {
   return dispatch => {
     dispatch({ type: FETCH_VERSE_COUNT });
     dispatch({ type: CHANGE_CHAPTER, payload: chapter })
-    dispatch({ type: CHANGE_VERSE, payload: 0 })
+    dispatch({ type: CHANGE_VERSE, payload: 1 })
     dispatch({ type: RESET_TEXT })
 
     const location = `${book}/${chapter}`
@@ -88,8 +88,8 @@ export function changeBook(book) {
 
   return dispatch => {
     dispatch({ type: CHANGE_BOOK, payload: book })
-    dispatch({ type: CHANGE_CHAPTER, payload: 0 })
-    dispatch({ type: CHANGE_VERSE, payload: 0 })
+    dispatch({ type: CHANGE_CHAPTER, payload: 1 })
+    dispatch({ type: CHANGE_VERSE, payload: 1 })
     dispatch({ type: RESET_TEXT })
     dispatch({
       type: CHAPTER_COUNT_SUCCESS,
